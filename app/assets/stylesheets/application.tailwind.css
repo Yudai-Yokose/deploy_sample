@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.back-ground {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    background-color: #0d1e1e;
+    background-repeat: no-repeat;
+    background-position: center 50%;
+    background-size: cover;
+    background-image: url("/blue-ocean.jpeg");
+}
+
+body {
+    padding-top: 2rem;
+    padding-bottom: 8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+
+.hidden {
+    display: none;
+}
+  
+.fade-in-top {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInTop 1s forwards;
+}
+  
+@keyframes fadeInTop {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+  
+.fade-in-bottom {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInBottom 1s forwards;
+}
+  
+@keyframes fadeInBottom {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+@keyframes lineGrow {
+    from {
+      width: 0;
+      opacity: 1;
+    }
+    to {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+  
+  .line-grow {
+    width: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .line-grow.show {
+    opacity: 1;
+    animation: lineGrow 1.5s forwards;
+}
