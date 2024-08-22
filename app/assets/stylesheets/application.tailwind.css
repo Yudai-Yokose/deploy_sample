@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/*=================================== general setting ==========================================*/
+
 .back-ground {
     position: absolute;
     top: 0;
@@ -16,13 +18,13 @@
 }
 
 body {
-    padding-top: 2rem;
+    padding-top: 6rem;
     padding-bottom: 8rem;
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
-
+/*=================================== Top page setting ==========================================*/
 
 .hidden {
     display: none;
@@ -74,4 +76,74 @@ body {
   .line-grow.show {
     opacity: 1;
     animation: lineGrow 1.5s forwards;
+}
+
+/*=================================== flash and error messages' setting =======================================*/
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.flash-message {
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+.flash-message.hide {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.flash-message-container {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.flash-message {
+  border: 1px solid #ff79c6;
+  background-color: rgba(40, 42, 54, 0.7);
+  padding: 10px 20px; /* パディングを調整 */
+  max-width: 500px; /* 最大幅を設定 */
+  border-radius: 10px; /* 角に丸みを追加 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.5s ease-out forwards;
+  pointer-events: auto;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px); /* 上にフェードアウト */
+  }
 }
