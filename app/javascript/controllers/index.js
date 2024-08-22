@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import FlashController from "./flash_controller"
+application.register("flash", FlashController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
@@ -12,3 +15,6 @@ application.register("intro", IntroController)
 
 import IssenController from "./issen_controller"
 application.register("issen", IssenController)
+
+import ModalController from "./modal_controller"
+application.register("modal", ModalController)
